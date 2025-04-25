@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace JulienNoe.Tools.NamingConvention
+namespace JulienNoe.Tools.ScriptableObjectManager
 {
     // Custom Unity Editor tool for browsing and filtering ScriptableObjects
     public class ScriptableObjectManagerEditor : EditorWindow
@@ -40,7 +40,7 @@ namespace JulienNoe.Tools.NamingConvention
         private bool showHelp = false;
 
         // Adds a menu item to launch the tool from Unity Editor
-        [MenuItem("Tools/Localization/Scriptable Object Manager")]
+        [MenuItem("Tools/Julien Noe/Scriptable Object Manager")]
         public static void ShowWindow()
         {
             GetWindow<ScriptableObjectManagerEditor>("ScriptableObject Browser");
@@ -229,7 +229,7 @@ namespace JulienNoe.Tools.NamingConvention
                 ScriptableObject so = AssetDatabase.LoadAssetAtPath<ScriptableObject>(assetPath);
                 if (so != null)
                 {
-                    string folderPath = Path.GetDirectoryName(assetPath).Replace("\", "/");
+                    string folderPath = Path.GetDirectoryName(assetPath).Replace("\\", "/");
                     if (!objectsByFolder.ContainsKey(folderPath))
                         objectsByFolder[folderPath] = new List<ScriptableObject>();
                     objectsByFolder[folderPath].Add(so);
