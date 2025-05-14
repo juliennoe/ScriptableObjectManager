@@ -1,6 +1,6 @@
 {
   "name": "com.juliennoe.scriptableobjectmanager",
-  "version": "2023.1.0",
+  "version": "1.0.0",
   "displayName": "Scriptable Object Manager",
   "description": "Unity Editor tool to browse, filter, and inspect ScriptableObjects by folder and content.",
   "unity": "2021.3",
